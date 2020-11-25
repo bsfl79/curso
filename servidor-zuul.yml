@@ -1,0 +1,20 @@
+server:
+  port: 7000
+
+   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+zuul:
+  routes:
+      serv-productps: # Definición servicio 1
+        path: /sproductos/** #path asociado a servicio 1
+        #url: http://localhost:9010/prueba
+        serviceId: servicio-productos
+      serv-pedidos: # Definición servicio 2
+        path: /spedidos/** # path asociado a servicio 2
+        #url: http://localhost:9009/enter
+        serviceId: servicio-pedidos
+
